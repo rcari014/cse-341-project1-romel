@@ -1,15 +1,22 @@
 // server.js
 import express from "express";
 import dotenv from "dotenv";
-import { MongoClient } from "mongodb";
+import { MongoClient, ServerApiVersion } from "mongodb";
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Create a MongoDB client
-const client = new MongoClient(process.env.MONGODB_URI);
+// Create a MongoDB client with proper TLS options
+const client = new MongoClient(process.env.MONGODB_URI, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  },
+  tls: true, // ✅ ensures encrypted connection over Render
+});
 
 async function main() {
   try {
@@ -38,11 +45,13 @@ async function main() {
     });
 
     // Start the server
-    app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
+    app.listen(PORT, () =>
+      console.log(`🚀 Server running on port ${PORT}`)
+    );
   } catch (err) {
     console.error("❌ MongoDB connection failed:", err);
+    process.exit(1); // ✅ exit so Render detects failure and retries
   }
 }
 
-// Run the main function
 main();
