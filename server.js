@@ -1,12 +1,13 @@
-// server.js
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import { MongoClient, ServerApiVersion } from "mongodb";
 
 dotenv.config();
-
 const app = express();
+app.use(cors()); // ✅ enable all cross-origin requests
 const PORT = process.env.PORT || 3000;
+
 
 // ✅ Updated client configuration
 const client = new MongoClient(process.env.MONGODB_URI, {
