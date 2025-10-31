@@ -1,9 +1,10 @@
 // routes/users.js
 import express from "express";
-import { getProfile } from "../controllers/users.js";
+import { getContacts } from "../controllers/users.js";
 
 const router = express.Router();
 
-router.get("/profile", getProfile);
+// endpoint: /api/contacts
+router.get("/contacts", getContacts);
 
 export default router;
