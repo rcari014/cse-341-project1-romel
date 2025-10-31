@@ -1,15 +1,20 @@
 {
-  "name": "romel-api",
+  "name": "cse-341-project1-romel",
   "version": "1.0.0",
-  "description": "",
+  "description": "CSE 341 Project 1 API using Express and MongoDB",
   "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "express",
+    "mongodb",
+    "cse341",
+    "api"
+  ],
+  "author": "Romelito Cariño",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
