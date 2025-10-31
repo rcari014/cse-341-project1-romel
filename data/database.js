@@ -18,7 +18,7 @@ export async function connectToDatabase() {
   try {
     await client.connect();
     console.log("✅ Connected to MongoDB Atlas");
-    return client.db("romel_api_db");
+    return client.db("cse-341-project1-romel");
   } catch (error) {
     console.error("❌ MongoDB connection failed:", error);
     process.exit(1);
