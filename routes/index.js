@@ -1,13 +1,12 @@
-// routes/index.js
 import express from "express";
-import userRoutes from "./users.js";
+import contactRoutes from "./contacts.js";
 
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.json({ message: "Welcome to Romel's API connected to MongoDB!" });
+  res.json({ message: "Welcome to Romel's Contacts API!" });
 });
 
-router.use("/api", userRoutes);
+router.use("/api", contactRoutes);
 
 export default router;
