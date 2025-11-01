@@ -1,4 +1,4 @@
-import { connectToDatabase } from "../data/database.js";
+import { connectToDatabase } from "../db/connect.js";
 import { ObjectId } from "mongodb";
 
 // Get all contacts

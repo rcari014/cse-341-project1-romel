@@ -1,0 +1,6 @@
+### 🧠 Get all contacts
+GET https://cse-341-project1-romel.onrender.com/api/contacts
+
+### 🧠 Get a specific contact by ID
+# Replace the ID below with a real _id from your MongoDB collection once you’ve added documents
+GET https://cse-341-project1-romel.onrender.com/api/contacts/6905dc3c9d6f9cb00d2753a5
